@@ -1,4 +1,4 @@
-App_Resources/
+app/App_Resources/
 hooks/
 node_modules/
 platforms/

@@ -9,7 +9,7 @@ tns create <nazwa> --ng
 * Sklonować repozytorium
 * Przekleić foldery poniższe foldery do folderu z repo
 ```
-App_Resources
+app/App_Resources
 hooks
 node_modules
 platforms
