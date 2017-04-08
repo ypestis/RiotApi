@@ -1,0 +1,22 @@
+.riot-list-image-logo {
+    width: 150px;
+    height: 150px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.riot-list-nick-input {
+    display: block;
+    width: 94%;
+    height: 40px;
+    padding: 7px 10px;
+    font-size: 15;
+    line-height: 2px;
+    color: #464a4c;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: auto;
+}
+/*.riot-list-search-button {
+    
+}*/
