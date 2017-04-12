@@ -2,6 +2,6 @@
 
 <StackLayout orientation='vertical' style.backgroundColor="lightgray" >
 	<Image src="~/riot/images/logo.png" class='riot-list-image-logo'></Image>
-	<TextField hint='Wpisz nick' [text]='nick1' class='riot-list-nick-input'></TextField>
-	<Button text="Szukaj" class="submit-button" (tap)="submit()" class='btn btn-primary'></Button>
+	<TextField hint='Wpisz nick' [(ngModel)]='nick1' class='riot-list-nick-input'></TextField>
+	<Button text="Szukaj" (tap)="find_user()" class='btn btn-primary'></Button>
 </StackLayout>

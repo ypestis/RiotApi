@@ -11,11 +11,15 @@ import "rxjs/add/operator/map";
 })
 export class RiotList implements OnInit {
     items: riot[];
-
+    nick1 = "";
     
 
     constructor(/*private http: Http*/) {
      }
+
+    find_user(){
+        alert(this.nick1);
+    }
 
     ngOnInit(): void {
         // var layout = require("ui/layouts/grid-layout");

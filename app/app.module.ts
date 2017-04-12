@@ -4,7 +4,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 
-import { FormsModule }   from '@angular/forms';
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { RiotList } from "./riot/riot.list"
@@ -17,7 +17,7 @@ import { RiotList } from "./riot/riot.list"
         NativeScriptModule,
         AppRoutingModule,
         NativeScriptHttpModule,
-        FormsModule,
+        NativeScriptFormsModule,
         HttpModule,
         JsonpModule
     ],
