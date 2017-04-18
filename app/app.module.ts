@@ -7,7 +7,7 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { HttpModule, JsonpModule } from '@angular/http';
 
-import { RiotList } from "./riot/riot.list"
+import { RiotStartpage } from "./riot/riot.startpage"
 
 @NgModule({
     bootstrap: [
@@ -23,7 +23,7 @@ import { RiotList } from "./riot/riot.list"
     ],
     declarations: [
         AppComponent,
-        RiotList
+        RiotStartpage
     ],
     providers: [
     ],

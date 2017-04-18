@@ -2,11 +2,11 @@ import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
-import { RiotList } from "./riot/riot.list"
+import { RiotStartpage } from "./riot/riot.startpage"
 
 const routes: Routes = [
-    { path: "", redirectTo: "/riot", pathMatch: "full" },
-    { path: "riot", component: RiotList },
+    { path: "", redirectTo: "/riot-start", pathMatch: "full" },
+    { path: "riot-start", component: RiotStartpage },
 ];
 
 @NgModule({
