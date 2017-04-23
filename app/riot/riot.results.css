@@ -1,0 +1,59 @@
+.riot-results-button {
+	width: 40%;
+	height: 80px;
+	margin: auto;
+	padding-top: 20px;
+}
+.text_field {
+	display: inline-block;
+}
+.text_bold {
+	font-weight: bold;
+}
+.text_center {
+	width: 100%;
+	text-align: center;
+}
+
+.chamipions {
+	margin-left: 7px;
+	width: 100px;
+	height: 100px;
+}
+
+.set-background {
+	background-color: lightblue;
+}
+.background-result {
+	background-color: lightblue;
+
+}
+
+.background-info {
+	background-color: #99ff99;
+}
+
+
+.style-seven {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border: 10px;
+}
+.style-seven-before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.stack_elements{
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-left: 10px;
+}

@@ -1,7 +1,7 @@
-<ActionBar title="Zajebista apka Czarusia i Wojtusia" class="action-bar"></ActionBar>
+<ActionBar title="apka" class="action-bar"></ActionBar>
 
-<StackLayout orientation='vertical' style.backgroundColor="lightgray" >
-	<Image src="~/riot/images/logo.png" class='riot-startpage-image-logo'></Image>
+<StackLayout orientation='vertical' class="start-background" >
+	<Image src="~/riot/images/logo-lol.png" class='riot-startpage-image-logo'></Image>
 	<TextField hint='Wpisz nick' [(ngModel)]='nick1' class='riot-startpage-nick-input'></TextField>
 	<Button text="Szukaj" (tap)="find_user()" class='btn btn-primary'></Button>
 </StackLayout>

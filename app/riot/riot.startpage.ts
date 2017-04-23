@@ -9,8 +9,8 @@ import "rxjs/add/operator/map";
     templateUrl: "./riot.startpage.html",
 })
 export class RiotStartpage {
-    nick1 = "";
-    
+    nick1 = "darterz";
+
     constructor(private router: Router) {
      }
 

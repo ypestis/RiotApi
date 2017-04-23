@@ -11,3 +11,4 @@ refer to http://docs.nativescript.org/ui/theme.
 */
 @import 'nativescript-theme-core/css/core.light.css';
 @import url("/riot/riot.startpage.css");
+@import url("/riot/riot.results.css");

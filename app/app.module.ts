@@ -9,7 +9,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { RiotStartpage } from "./riot/riot.startpage"
 import { RiotResults } from "./riot/riot.results"
-
+import { TabsComponent } from './riot/riot.tabs';
 
 @NgModule({
     bootstrap: [
@@ -26,7 +26,8 @@ import { RiotResults } from "./riot/riot.results"
     declarations: [
         AppComponent,
         RiotStartpage,
-        RiotResults
+        RiotResults,
+        TabsComponent
     ],
     providers: [
     ],
