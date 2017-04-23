@@ -17,7 +17,7 @@
 </StackLayout> -->
 <StackLayout >
 	<tabs>
-		<tab tabTitle="Ogolne">
+		<tab tabTitle="Ogólne">
 			<ListView [items]="playerList" style="width:100%;height:100%" class='background-result'>
 				<template let-item="item">
 					<StackLayout>
@@ -115,6 +115,11 @@
 			<ListView [items]="playerList" style="width:100%;height:100%">
 				<template let-item="item">
 					<StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+						</StackLayout>
+
+						<Label [text]=""  class="style-seven-before"></Label>
 							<GridLayout columns="80, *, auto" rows="auto, *" class="set-background" >
 								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion1.championId}}.png" class="chamipions"></Image>
 
@@ -368,10 +373,15 @@
 				</template>
 			</ListView>
 		</tab>
-		<tab tabTitle="Rozne">
+		<tab tabTitle="Różne">
 			<ListView [items]="playerList" style="width:100%;height:100%" class='background-result'>
 				<template let-item="item">
 					<StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+						</StackLayout>
+
+						<Label [text]=""  class="style-seven-before"></Label>
 						<!-- <Image src="~/riot/images/champions/1.png" stretch ="none"></Image> -->
 						<Label [text]=""  class="style-seven-before"></Label>
 						<StackLayout orientation="horizontal" class="stack_elements">

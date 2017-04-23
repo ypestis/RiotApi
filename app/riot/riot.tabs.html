@@ -1,6 +1,6 @@
-<StackLayout>
-    <Label [text]="tabs[0].tabTitle" (tap)="changeSelectedTab(0)"></Label>
-    <Label [text]="tabs[1].tabTitle" (tap)="changeSelectedTab(1)"></Label>
-    <Label [text]="tabs[2].tabTitle" (tap)="changeSelectedTab(2)"></Label>
-</StackLayout>
+<GridLayout columns="*,*,*" rows="60px" class="tabs-grid">
+    <Label class="tabs-tab" [ngClass]="{ 'tabs-tab-active': tabs[0].selected, 'tabs-tab-inactive': !tabs[0].selected }" col="0" row="0" [text]="tabs[0].tabTitle" (tap)="changeSelectedTab(0)"></Label>
+    <Label class="tabs-tab" [ngClass]="{ 'tabs-tab-active': tabs[1].selected, 'tabs-tab-inactive': !tabs[1].selected }" col="1" row="0" [text]="tabs[1].tabTitle" (tap)="changeSelectedTab(1)"></Label>
+    <Label class="tabs-tab" [ngClass]="{ 'tabs-tab-active': tabs[2].selected, 'tabs-tab-inactive': !tabs[2].selected }" col="2" row="0" [text]="tabs[2].tabTitle" (tap)="changeSelectedTab(2)"></Label>
+</GridLayout>
 <ng-content></ng-content>
