@@ -10,6 +10,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { RiotStartpage } from "./riot/riot.startpage"
 import { RiotResults } from "./riot/riot.results"
 import { TabsComponent } from './riot/riot.tabs';
+import { TabComponent } from './riot/riot.tab';
 
 @NgModule({
     bootstrap: [
@@ -27,9 +28,12 @@ import { TabsComponent } from './riot/riot.tabs';
         AppComponent,
         RiotStartpage,
         RiotResults,
-        TabsComponent
+        TabComponent, 
+        TabsComponent,
     ],
     providers: [
+        TabComponent, 
+        TabsComponent,
     ],
     schemas: [
         NO_ERRORS_SCHEMA

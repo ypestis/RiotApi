@@ -18,6 +18,7 @@ const routes: Routes = [
     { 
         path: "riot-results/:summonerName", 
         component: RiotResults,
+        
     },
 ];
 

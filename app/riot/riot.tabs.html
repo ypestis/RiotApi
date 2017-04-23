@@ -1,0 +1,6 @@
+<StackLayout>
+    <Label [text]="tabs[0].tabTitle" (tap)="changeSelectedTab(0)"></Label>
+    <Label [text]="tabs[1].tabTitle" (tap)="changeSelectedTab(1)"></Label>
+    <Label [text]="tabs[2].tabTitle" (tap)="changeSelectedTab(2)"></Label>
+</StackLayout>
+<ng-content></ng-content>

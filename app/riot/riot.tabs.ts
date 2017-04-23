@@ -1,51 +1,37 @@
- import {Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef, Input,Output,EventEmitter} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Tab } from './tab.interface';
+import { Page } from "ui/page";
 
-    import {Page} from 'ui/page';
-    import {SegmentedBar, SegmentedBarItem, SelectedIndexChangedEventData} from 'ui/segmented-bar';
+@Component({
+  selector: 'tabs',
+  templateUrl: './riot/riot.tabs.html',
+})
+export class TabsComponent {
+  
+    tabs:Tab[] = [];
+    @Output() selected = new EventEmitter();
 
-    @Component({
-        selector: 'tabs',
-        template: '<SegmentedBar #tabs [items]="items" [selectedIndex]="selectedIndex"></SegmentedBar>'
-    })
-    export class TabsComponent implements OnInit, OnDestroy, AfterViewInit {
-        selectedIndex: number;
-        items: Array<any>;
-        selected : number;
-        // @Input('aaa') aaa = this.selected;
-        @Input() masterName: number;
-        @Output() result = new EventEmitter<number>();
-
-        @ViewChild("tabs") tabs: ElementRef; // equal to getViewById() in NativeScript core
-
-        constructor(private page: Page) {
-            this.selectedIndex = 0;
-            this.items = [{ title: 'General' }, { title: 'Best 5' }, { title: 'Other' }];
+	constructor(private page: Page){}
+    
+    addTab(tab: Tab) {
+        if (!this.tabs.length) {
+            tab.selected = true;
         }
-        ngOnInit() {
-
-        }
-        ngAfterViewInit() {
-            this.tabs.nativeElement.on(SegmentedBar.selectedIndexChangedEvent, (args: SelectedIndexChangedEventData) => {
-                switch (args.newIndex) {
-                    case 0:
-                        // console.log('first selected');
-                        this.masterName = 0;
-
-                        this.result.emit(this.masterName);
-                        break;
-                    case 1:
-                        // console.log('second selected');
-                        this.masterName = 1;
-                        this.result.emit(this.masterName);
-
-                        break;
-                    case 2:
-                        // console.log('third selected');
-                        this.masterName = 2;
-                        this.result.emit(this.masterName);
-                        break;
-                }
-            })
-        }
-        ngOnDestroy() { }
+        this.tabs.push(tab);
     }
+    
+    selectTab(tab:Tab) {
+        this.tabs.map((tab) => {
+            tab.selected = true;
+        })
+        tab.selected = true;
+        // this.selected.emit({selectedTab: tab});    
+    }
+
+    changeSelectedTab(index: number){
+		for (var i = 0; i < this.tabs.length; i++) {
+			if(i==index) this.tabs[i].selected = true;
+			else this.tabs[i].selected = false;
+		}
+    }
+}

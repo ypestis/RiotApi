@@ -1,5 +1,5 @@
 
-<ActionBar title="A to jest drugi stan" class="action-bar"></ActionBar>
+<!--<ActionBar title="A to jest drugi stan" class="action-bar"></ActionBar>-->
 <!-- <tabs [master]="master" (result)="ngOnChange($event)"></tabs> -->
 <!-- <TextField [(ngModel)]='selected' class='text_field'></TextField> -->
 <!-- <Label [text]="master" class="medium-spacing"></Label> -->
@@ -16,402 +16,411 @@
     	<TextField hint='sdfghjk' [text]='totalGames' class='text_field'></TextField>
 </StackLayout> -->
 <StackLayout >
+	<tabs>
+		<tab tabTitle="Ogolne">
+			<ListView [items]="playerList" style="width:100%;height:100%" class='background-result'>
+				<template let-item="item">
+					<StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+						</StackLayout>
 
-  <tabs [master]="master" (result)="ngOnChange($event)"></tabs>
+						<Label [text]=""  class="style-seven-before"></Label>
+
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Rozegrane mecze: '"></Label>
+							<Label [text]="item.totalGames" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Wygrane mecze: '"></Label>
+							<Label [text]="item.totalWins" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Przegrane mecze: '"></Label>
+							<Label [text]="item.totalDefeats" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<!-- <Image src="~/riot/images/champions/1.png" stretch ="none"></Image> -->
+
+
+						<Label [text]=""  class="style-seven-before"></Label>
+
+
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Największa ilość zabójst w meczu: '"></Label>
+							<Label [text]="item.mostKills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Największa ilość śmierci w meczu: '"></Label>
+							<Label [text]="item.mostDeaths" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+
+
+						<Label [text]=""  class="style-seven-before"></Label>
+
+
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Double kills: '"></Label>
+							<Label [text]="item.doubleKills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Triple kills: '"></Label>
+							<Label [text]="item.tripleKills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal"  class="stack_elements">
+							<Label [text]="'Quadra kills: '"></Label>
+							<Label [text]="item.quadraKills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Penta kills: '"></Label>
+							<Label [text]="item.pentaKills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+
+
+
+						<Label [text]=""  class="style-seven-before"></Label>
+
+
+
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Śmierci łącznie: '"></Label>
+							<Label [text]="item.deaths" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal"  class="stack_elements">
+							<Label [text]="'Asysty łącznie: '"></Label>
+							<Label [text]="item.assists" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Zabójstwa łącznie: '"></Label>
+							<Label [text]="item.kills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal"  class="stack_elements">
+							<Label [text]="'Zabójstwa pod rząd: '"></Label>
+							<Label [text]="item.maxKillingSpree" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'KDA ratio: '"></Label>
+							<Label [text]="item.kdaRatio" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+
+						<!-- <StackLayout orientation="horizontal">
+							<Label [text]="'Champion 1: '"></Label>
+							<Label [text]="item.mostPlayedChampion1.championName" class="medium-spacing text_bold"></Label>
+						</StackLayout> -->
+
+					</StackLayout>
+				</template>
+			</ListView>
+		</tab>
+		<tab tabTitle="Postacie">
+			<ListView [items]="playerList" style="width:100%;height:100%">
+				<template let-item="item">
+					<StackLayout>
+							<GridLayout columns="80, *, auto" rows="auto, *" class="set-background" >
+								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion1.championId}}.png" class="chamipions"></Image>
+
+								<StackLayout col="1" style="margin-left: 10px;">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Nazwa championa: '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championName" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championTotalGames" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Wygrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championTotalWins" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Przegrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championTotalDefeats" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na mecz : '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championDeathsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+
+								<StackLayout row="1" colSpan="3">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Asysty na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championAssistsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championKillsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'KDA: '"></Label>
+									<Label [text]="item.mostPlayedChampion1.championKda" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+							</GridLayout>
+
+							<GridLayout columns="80, *, auto" rows="auto, *" >
+								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion2.championId}}.png" class="chamipions"></Image>
+
+								<StackLayout col="1" style="margin-left: 10px;">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Nazwa championa: '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championName" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championTotalGames" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Wygrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championTotalWins" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Przegrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championTotalDefeats" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na mecz : '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championDeathsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+
+								<StackLayout row="1" colSpan="3">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Asysty na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championAssistsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championKillsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'KDA: '"></Label>
+									<Label [text]="item.mostPlayedChampion2.championKda" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+							</GridLayout>
+
+							<GridLayout columns="80, *, auto" rows="auto, *" class="set-background">
+								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion3.championId}}.png" class="chamipions"></Image>
+
+								<StackLayout col="1" style="margin-left: 10px;">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Nazwa championa: '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championName" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championTotalGames" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Wygrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championTotalWins" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Przegrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championTotalDefeats" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na mecz : '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championDeathsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+
+								<StackLayout row="1" colSpan="3">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Asysty na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championAssistsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championKillsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'KDA: '"></Label>
+									<Label [text]="item.mostPlayedChampion3.championKda" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+							</GridLayout>
+
+							<GridLayout columns="80, *, auto" rows="auto, *" >
+								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion4.championId}}.png" class="chamipions"></Image>
+
+								<StackLayout col="1" style="margin-left: 10px;">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Nazwa championa: '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championName" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championTotalGames" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Wygrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championTotalWins" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Przegrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championTotalDefeats" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na mecz : '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championDeathsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+
+								<StackLayout row="1" colSpan="3">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Asysty na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championAssistsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championKillsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'KDA: '"></Label>
+									<Label [text]="item.mostPlayedChampion4.championKda" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+							</GridLayout>
+
+							<GridLayout columns="80, *, auto" rows="auto, *" class="set-background">
+								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion5.championId}}.png" class="chamipions"></Image>
+
+								<StackLayout col="1" style="margin-left: 10px;">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Nazwa championa: '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championName" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championTotalGames" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Wygrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championTotalWins" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Przegrane mecze : '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championTotalDefeats" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na mecz : '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championDeathsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+
+								<StackLayout row="1" colSpan="3">
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Asysty na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championAssistsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'Śmierci na gre: '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championKillsPerGame" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+									<StackLayout orientation="horizontal">
+
+									<Label [text]="'KDA: '"></Label>
+									<Label [text]="item.mostPlayedChampion5.championKda" class="medium-spacing text_bold"></Label>
+									</StackLayout>
+								</StackLayout>
+							</GridLayout>
+					</StackLayout>
+				</template>
+			</ListView>
+		</tab>
+		<tab tabTitle="Rozne">
+			<ListView [items]="playerList" style="width:100%;height:100%" class='background-result'>
+				<template let-item="item">
+					<StackLayout>
+						<!-- <Image src="~/riot/images/champions/1.png" stretch ="none"></Image> -->
+						<Label [text]=""  class="style-seven-before"></Label>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Zabite stwory (mioniony) ogólnie: '"></Label>
+							<Label [text]="item.minionKills" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Zabite stwory (mioniony) na jedną grę: '"></Label>
+							<Label [text]="item.minionKillsPerGame" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+
+						<Label [text]=""  class="style-seven-before"></Label>
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Śmierci na jednen mecz: '"></Label>
+							<Label [text]="item.deathsPerGame" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Asysty na jeden mecz: '"></Label>
+							<Label [text]="item.assistsPerGame" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+
+						<StackLayout orientation="horizontal" class="stack_elements">
+							<Label [text]="'Zabójstwa na jeden mecz: '"></Label>
+							<Label [text]="item.killsPerGame" class="medium-spacing text_bold"></Label>
+						</StackLayout>
+							<Label [text]=""  class="style-seven-before"></Label>
+						<!-- <StackLayout orientation="horizontal">
+							<Label [text]="'Champion 1: '"></Label>
+							<Label [text]="item.mostPlayedChampion1.championName" class="medium-spacing text_bold"></Label>
+						</StackLayout> -->
+
+					</StackLayout>
+				</template>
+			</ListView>
+		</tab>
+	</tabs>
+</StackLayout>
   <!-- <TextField [(ngModel)]='selected' class='text_field'></TextField> -->
   <!-- <Label [text]="master" class="medium-spacing"></Label> -->
-  <Label hint="Kliknij kurwa mać w to !" [text]="wtf" (tap)="onTap()"></Label>
+  <!--<Label hint="Kliknij kurwa mać w to !" [text]="wtf" (tap)="onTap()"></Label>-->
 
   <!-- <TextField text="{{ master }}" ></TextField> -->
 
-  <ListView *ngIf="message==0" [items]="playerList" style="width:100%;height:100%" class='background-result'>
-    <template let-item="item">
-     <StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
-        </StackLayout>
+  
 
-        <Label [text]=""  class="style-seven-before"></Label>
+  
 
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Rozegrane mecze: '"></Label>
-          <Label [text]="item.totalGames" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Wygrane mecze: '"></Label>
-          <Label [text]="item.totalWins" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Przegrane mecze: '"></Label>
-          <Label [text]="item.totalDefeats" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <!-- <Image src="~/riot/images/champions/1.png" stretch ="none"></Image> -->
 
-
-        <Label [text]=""  class="style-seven-before"></Label>
-
-
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Największa ilość zabójst w meczu: '"></Label>
-          <Label [text]="item.mostKills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Największa ilość śmierci w meczu: '"></Label>
-          <Label [text]="item.mostDeaths" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-
-
-        <Label [text]=""  class="style-seven-before"></Label>
-
-
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Double kills: '"></Label>
-          <Label [text]="item.doubleKills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Triple kills: '"></Label>
-          <Label [text]="item.tripleKills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal"  class="stack_elements">
-          <Label [text]="'Quadra kills: '"></Label>
-          <Label [text]="item.quadraKills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Penta kills: '"></Label>
-          <Label [text]="item.pentaKills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-
-
-
-        <Label [text]=""  class="style-seven-before"></Label>
-
-
-
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Śmierci łącznie: '"></Label>
-          <Label [text]="item.deaths" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal"  class="stack_elements">
-          <Label [text]="'Asysty łącznie: '"></Label>
-          <Label [text]="item.assists" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Zabójstwa łącznie: '"></Label>
-          <Label [text]="item.kills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal"  class="stack_elements">
-          <Label [text]="'Zabójstwa pod rząd: '"></Label>
-          <Label [text]="item.maxKillingSpree" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'KDA ratio: '"></Label>
-          <Label [text]="item.kdaRatio" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-
-        <!-- <StackLayout orientation="horizontal">
-          <Label [text]="'Champion 1: '"></Label>
-          <Label [text]="item.mostPlayedChampion1.championName" class="medium-spacing text_bold"></Label>
-        </StackLayout> -->
-
-     </StackLayout>
-    </template>
-  </ListView>
-
-  <ListView *ngIf="message==1" [items]="playerList" style="width:100%;height:100%">
-    <template let-item="item">
-        <StackLayout>
-              <GridLayout columns="80, *, auto" rows="auto, *" class="set-background" >
-                   <Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion1.championId}}.png" class="chamipions"></Image>
-
-                   <StackLayout col="1" style="margin-left: 10px;">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Nazwa championa: '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championName" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championTotalGames" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Wygrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championTotalWins" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Przegrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championTotalDefeats" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na mecz : '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championDeathsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-
-                   <StackLayout row="1" colSpan="3">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Asysty na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championAssistsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championKillsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'KDA: '"></Label>
-                        <Label [text]="item.mostPlayedChampion1.championKda" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-              </GridLayout>
-
-              <GridLayout columns="80, *, auto" rows="auto, *" >
-                   <Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion2.championId}}.png" class="chamipions"></Image>
-
-                   <StackLayout col="1" style="margin-left: 10px;">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Nazwa championa: '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championName" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championTotalGames" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Wygrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championTotalWins" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Przegrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championTotalDefeats" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na mecz : '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championDeathsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-
-                   <StackLayout row="1" colSpan="3">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Asysty na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championAssistsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championKillsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'KDA: '"></Label>
-                        <Label [text]="item.mostPlayedChampion2.championKda" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-              </GridLayout>
-
-              <GridLayout columns="80, *, auto" rows="auto, *" class="set-background">
-                   <Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion3.championId}}.png" class="chamipions"></Image>
-
-                   <StackLayout col="1" style="margin-left: 10px;">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Nazwa championa: '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championName" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championTotalGames" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Wygrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championTotalWins" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Przegrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championTotalDefeats" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na mecz : '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championDeathsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-
-                   <StackLayout row="1" colSpan="3">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Asysty na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championAssistsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championKillsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'KDA: '"></Label>
-                        <Label [text]="item.mostPlayedChampion3.championKda" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-              </GridLayout>
-
-              <GridLayout columns="80, *, auto" rows="auto, *" >
-                   <Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion4.championId}}.png" class="chamipions"></Image>
-
-                   <StackLayout col="1" style="margin-left: 10px;">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Nazwa championa: '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championName" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championTotalGames" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Wygrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championTotalWins" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Przegrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championTotalDefeats" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na mecz : '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championDeathsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-
-                   <StackLayout row="1" colSpan="3">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Asysty na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championAssistsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championKillsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'KDA: '"></Label>
-                        <Label [text]="item.mostPlayedChampion4.championKda" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-              </GridLayout>
-
-              <GridLayout columns="80, *, auto" rows="auto, *" class="set-background">
-                   <Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion5.championId}}.png" class="chamipions"></Image>
-
-                   <StackLayout col="1" style="margin-left: 10px;">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Nazwa championa: '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championName" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Ilość rozgranych meczy postacią: '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championTotalGames" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Wygrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championTotalWins" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Przegrane mecze : '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championTotalDefeats" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na mecz : '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championDeathsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-
-                   <StackLayout row="1" colSpan="3">
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Asysty na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championAssistsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'Śmierci na gre: '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championKillsPerGame" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                      <StackLayout orientation="horizontal">
-
-                        <Label [text]="'KDA: '"></Label>
-                        <Label [text]="item.mostPlayedChampion5.championKda" class="medium-spacing text_bold"></Label>
-                      </StackLayout>
-                   </StackLayout>
-              </GridLayout>
-        </StackLayout>
-    </template>
-  </ListView>
-
-
-  <ListView *ngIf="message==2" [items]="playerList" style="width:100%;height:100%" class='background-result'>
-    <template let-item="item">
-     <StackLayout>
-        <!-- <Image src="~/riot/images/champions/1.png" stretch ="none"></Image> -->
-         <Label [text]=""  class="style-seven-before"></Label>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Zabite stwory (mioniony) ogólnie: '"></Label>
-          <Label [text]="item.minionKills" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Zabite stwory (mioniony) na jedną grę: '"></Label>
-          <Label [text]="item.minionKillsPerGame" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-
-         <Label [text]=""  class="style-seven-before"></Label>
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Śmierci na jednen mecz: '"></Label>
-          <Label [text]="item.deathsPerGame" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Asysty na jeden mecz: '"></Label>
-          <Label [text]="item.assistsPerGame" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-
-        <StackLayout orientation="horizontal" class="stack_elements">
-          <Label [text]="'Zabójstwa na jeden mecz: '"></Label>
-          <Label [text]="item.killsPerGame" class="medium-spacing text_bold"></Label>
-        </StackLayout>
-          <Label [text]=""  class="style-seven-before"></Label>
-        <!-- <StackLayout orientation="horizontal">
-          <Label [text]="'Champion 1: '"></Label>
-          <Label [text]="item.mostPlayedChampion1.championName" class="medium-spacing text_bold"></Label>
-        </StackLayout> -->
-
-     </StackLayout>
-    </template>
-  </ListView>
-</StackLayout>
+  
 
 

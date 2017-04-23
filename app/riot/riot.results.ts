@@ -43,7 +43,7 @@ export class RiotResults implements OnInit {
                     .subscribe(
                         data => {
                             this.summoner = data;
-                            console.dir(data);
+                            // console.dir(data);
                             this.playerList.push(data);
                         }
                     );
@@ -63,7 +63,7 @@ export class RiotResults implements OnInit {
         console.log(val);
 
         this.message = val;
-        console.dir(this.message);
+        // console.dir(this.message);
         this.onTap();
     }
 }
