@@ -12,13 +12,14 @@
     border: 2px solid black;
     font-weight: bold;
     font-size: 20px;
-    top: 40px;
+    top: 20px;
+    border-radius: 5px;
 }
 .tabs-tab-active{
-    background-color: #00FF00;
+    background-color: #30BCFF;
 }
 .tabs-tab-inactive{
-    background-color: #FF0000;
+    background-color: #e6eef2;
 }
 .tabs-grid{
     margin-top: 0px;

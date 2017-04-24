@@ -8,69 +8,109 @@
 			<ListView [items]="playerList" style="width:100%;height:100%" class='background-result'>
 				<template let-item="item">
 					<StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+
+
+						<StackLayout>
+							<StackLayout orientation="horizontal" class="stack_elements">
+								<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+							</StackLayout>
+							<Label [text]=""  class="style-seven-before"></Label>
 						</StackLayout>
+
+
+						<GridLayout columns="180, 150" rows="*" class="set-margin">
+
+							<StackLayout col="0" style="margin-left: 10px;">
+								<StackLayout>
+									<Label [text]="'Total games played: '"></Label>
+									<Label [text]="'Total games won: '"></Label>
+									<Label [text]="'Total games defeat: '"></Label>
+								</StackLayout>
+							</StackLayout>
+
+							<StackLayout col="1" style="margin-left: 10px;">
+								<StackLayout>
+									<Label [text]="item.totalGames" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.totalWins" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.totalDefeats" class="medium-spacing text_bold"></Label>
+								</StackLayout>
+							</StackLayout>
+						</GridLayout>
+
 						<Label [text]=""  class="style-seven-before"></Label>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Total games played: '"></Label>
-							<Label [text]="item.totalGames" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Total games won: '"></Label>
-							<Label [text]="item.totalWins" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Total games won: '"></Label>
-							<Label [text]="item.totalDefeats" class="medium-spacing text_bold"></Label>
-						</StackLayout>
+
+						<GridLayout columns="180, 150" rows="*" class="set-margin">
+
+							<StackLayout col="0" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="'Most kills in game: '"></Label>
+									<Label [text]="'Most deaths in game: '"></Label>
+								</StackLayout>
+							</StackLayout>
+
+							<StackLayout col="1" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="item.mostKills" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.mostDeaths" class="medium-spacing text_bold"></Label>
+								</StackLayout>
+							</StackLayout>
+						</GridLayout>
+
+
 						<Label [text]=""  class="style-seven-before"></Label>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Most kills in game: '"></Label>
-							<Label [text]="item.mostKills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Most deaths in game: '"></Label>
-							<Label [text]="item.mostDeaths" class="medium-spacing text_bold"></Label>
-						</StackLayout>
+
+
+						<GridLayout columns="180, 150" rows="*" class="set-margin">
+
+							<StackLayout col="0" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="'Double kills: '"></Label>
+									<Label [text]="'Triple kills: '"></Label>
+									<Label [text]="'Quadra kills: '"></Label>
+									<Label [text]="'Penta kills: '"></Label>
+								</StackLayout>
+							</StackLayout>
+
+							<StackLayout col="1" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="item.doubleKills" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.tripleKills" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.quadraKills" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.pentaKills" class="medium-spacing text_bold"></Label>
+								</StackLayout>
+							</StackLayout>
+						</GridLayout>
+
 						<Label [text]=""  class="style-seven-before"></Label>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Double kills: '"></Label>
-							<Label [text]="item.doubleKills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Triple kills: '"></Label>
-							<Label [text]="item.tripleKills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal"  class="stack_elements">
-							<Label [text]="'Quadra kills: '"></Label>
-							<Label [text]="item.quadraKills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Penta kills: '"></Label>
-							<Label [text]="item.pentaKills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
+
+
+
+
+						<GridLayout columns="180, 150" rows="*" class="set-margin">
+
+							<StackLayout col="0" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="'Total deaths: '"></Label>
+									<Label [text]="'Total assists: '"></Label>
+									<Label [text]="'Total kills: '"></Label>
+									<Label [text]="'Biggest killing-spree: '"></Label>
+									<Label [text]="'Overall KDA ratio: '"></Label>
+								</StackLayout>
+							</StackLayout>
+
+							<StackLayout col="1" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="item.deaths" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.assists" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.kills" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.maxKillingSpree" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.kdaRatio" class="medium-spacing text_bold"></Label>
+								</StackLayout>
+							</StackLayout>
+						</GridLayout>
+
 						<Label [text]=""  class="style-seven-before"></Label>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Total deaths: '"></Label>
-							<Label [text]="item.deaths" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal"  class="stack_elements">
-							<Label [text]="'Total assists: '"></Label>
-							<Label [text]="item.assists" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Total kills: '"></Label>
-							<Label [text]="item.kills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal"  class="stack_elements">
-							<Label [text]="'Biggest killing-spree: '"></Label>
-							<Label [text]="item.maxKillingSpree" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Overall KDA ratio: '"></Label>
-							<Label [text]="item.kdaRatio" class="medium-spacing text_bold"></Label>
-						</StackLayout>
+
 					</StackLayout>
 				</template>
 			</ListView>
@@ -83,7 +123,7 @@
 							<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
 						</StackLayout>
 |						<Label [text]=""  class="style-seven-before"></Label>
-							<GridLayout columns="120, 150, *" rows="*" class="set-background set-margin" >
+							<GridLayout columns="120, 150, *" rows="*" class="set-background-odd set-margin" >
 								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion1.championId}}.png" class="champions"></Image>
 								<StackLayout col="1" style="margin-left: 10px;">
 									<Label [text]="'Champion: '"></Label>
@@ -111,7 +151,7 @@
 									<Label [text]="item.mostPlayedChampion1.championKda" class="medium-spacing text_bold"></Label>
 								</StackLayout>
 							</GridLayout>
-							<GridLayout columns="120, 150, *" rows="*" class="set-margin">
+							<GridLayout columns="120, 150, *" rows="*" class="set-margin set-background-even">
 								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion2.championId}}.png" class="champions"></Image>
 								<StackLayout col="1" style="margin-left: 10px;">
 									<Label [text]="'Champion: '"></Label>
@@ -139,7 +179,7 @@
 									<Label [text]="item.mostPlayedChampion2.championKda" class="medium-spacing text_bold"></Label>
 								</StackLayout>
 							</GridLayout>
-|							<GridLayout columns="120, 150, *" rows="*" class="set-background set-margin" >
+|							<GridLayout columns="120, 150, *" rows="*" class="set-background-odd set-margin" >
 								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion3.championId}}.png" class="champions"></Image>
 								<StackLayout col="1" style="margin-left: 10px;">
 									<Label [text]="'Champion: '"></Label>
@@ -167,7 +207,7 @@
 									<Label [text]="item.mostPlayedChampion3.championKda" class="medium-spacing text_bold"></Label>
 								</StackLayout>
 							</GridLayout>
-							<GridLayout columns="120, 150, *" rows="*" class="set-margin">
+							<GridLayout columns="120, 150, *" rows="*" class="set-margin set-background-even">
 								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion4.championId}}.png" class="champions"></Image>
 								<StackLayout col="1" style="margin-left: 10px;">
 									<Label [text]="'Champion: '"></Label>
@@ -195,7 +235,7 @@
 									<Label [text]="item.mostPlayedChampion4.championKda" class="medium-spacing text_bold"></Label>
 								</StackLayout>
 							</GridLayout>
-							<GridLayout columns="120, 150, *" rows="*" class="set-background set-margin" >
+							<GridLayout columns="120, 150, *" rows="*" class="set-background-odd set-margin" >
 								<Image col="0" src="~/riot/images/champions/{{item.mostPlayedChampion5.championId}}.png" class="champions"></Image>
 								<StackLayout col="1" style="margin-left: 10px;">
 									<Label [text]="'Champion: '"></Label>
@@ -231,33 +271,53 @@
 			<ListView [items]="playerList" style="width:100%;height:100%" class='background-result'>
 				<template let-item="item">
 					<StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
-						</StackLayout>
-						<Label [text]=""  class="style-seven-before"></Label>
-						<Label [text]=""  class="style-seven-before"></Label>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Total minion kills: '"></Label>
-							<Label [text]="item.minionKills" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Minion kills per game: '"></Label>
-							<Label [text]="item.minionsPerGame" class="medium-spacing text_bold"></Label>
+
+						<StackLayout>
+							<StackLayout orientation="horizontal" class="stack_elements">
+								<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+							</StackLayout>
+							<Label [text]=""  class="style-seven-before"></Label>
 						</StackLayout>
 
+
+						<GridLayout columns="180, 150" rows="*" class="set-margin">
+
+							<StackLayout col="0" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="'Total minion kills: '"></Label>
+									<Label [text]="'Minion kills per game: '"></Label>
+								</StackLayout>
+							</StackLayout>
+
+							<StackLayout col="1" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="item.minionKills" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.minionsPerGame" class="medium-spacing text_bold"></Label>
+								</StackLayout>
+							</StackLayout>
+						</GridLayout>
+
 						<Label [text]=""  class="style-seven-before"></Label>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Kills per game: '"></Label>
-							<Label [text]="item.killsPerGame" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Assists per game: '"></Label>
-							<Label [text]="item.assistsPerGame" class="medium-spacing text_bold"></Label>
-						</StackLayout>
-						<StackLayout orientation="horizontal" class="stack_elements">
-							<Label [text]="'Deaths per game: '"></Label>
-							<Label [text]="item.deathsPerGame" class="medium-spacing text_bold"></Label>
-						</StackLayout>
+
+						<GridLayout columns="180, 150" rows="*" class="set-margin">
+
+							<StackLayout col="0" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="'Kills per game: '"></Label>
+									<Label [text]="'Assists per game: '"></Label>
+									<Label [text]="'Deaths per game: '"></Label>
+								</StackLayout>
+							</StackLayout>
+
+							<StackLayout col="1" style="margin-left: 10px;margin-top: 10px">
+								<StackLayout>
+									<Label [text]="item.killsPerGame" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.assistsPerGame" class="medium-spacing text_bold"></Label>
+									<Label [text]="item.deathsPerGame" class="medium-spacing text_bold"></Label>
+								</StackLayout>
+							</StackLayout>
+						</GridLayout>
+
 						<Label [text]=""  class="style-seven-before"></Label>
 					</StackLayout>
 				</template>
@@ -265,10 +325,3 @@
 		</tab>
 	</tabs>
 </StackLayout>
-
-  
-
-
-  
-
-

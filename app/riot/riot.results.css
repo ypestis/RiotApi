@@ -21,11 +21,16 @@
 	height: 100px;
 }
 
-.set-background {
-	background-color: lightblue;
+.set-background-odd {
+	background-color: #ebffdd;
 }
+
+.set-background-even {
+	background-color: #e5ecff;
+}
+
 .background-result {
-	background-color: lightblue;
+	background-color: #eff5f7;
 }
 
 .background-info {
