@@ -5,7 +5,7 @@
 	padding-top: 20px;
 }
 .text_field {
-	/*display: inline-block;*/
+	display: inline-block;
 }
 .text_bold {
 	font-weight: bold;
@@ -15,7 +15,7 @@
 	text-align: center;
 }
 
-.chamipions {
+.champions {
 	margin-left: 7px;
 	width: 100px;
 	height: 100px;
@@ -26,7 +26,6 @@
 }
 .background-result {
 	background-color: lightblue;
-
 }
 
 .background-info {
@@ -40,9 +39,11 @@
     border-color: black;
     border-width: 1px 0 0 0;
     border: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .style-seven-before {
-    /*display: block;*/
+    display: block;
     content: "";
     height: 30px;
     margin-top: -31px;
@@ -53,7 +54,16 @@
 }
 
 .stack_elements{
-	margin-top: 6px;
-	margin-bottom: 6px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 	margin-left: 10px;
+}
+.icons{
+	height: 16px;
+	width: auto;
+	margin-right: 8px;
+}
+.set-margin{
+	margin-bottom: 15px;
+	height: 100%;
 }

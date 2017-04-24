@@ -1,7 +1,7 @@
-<ActionBar title="apka" class="action-bar"></ActionBar>
+<ActionBar title="League Stats" class="action-bar"></ActionBar>
 
 <StackLayout orientation='vertical' class="start-background" >
 	<Image src="~/riot/images/logo-lol.png" class='riot-startpage-image-logo'></Image>
-	<TextField hint='Wpisz nick' [(ngModel)]='nick1' class='riot-startpage-nick-input'></TextField>
-	<Button text="Szukaj" (tap)="find_user()" class='btn btn-primary'></Button>
+	<TextField hint='Enter nickname...' [(ngModel)]='nickname' class='riot-startpage-nick-input'></TextField>
+	<Button text="Find summoner" (tap)="find_user()" class='btn btn-primary riot-startpage-button'></Button>
 </StackLayout>

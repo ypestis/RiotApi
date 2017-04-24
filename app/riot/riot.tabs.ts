@@ -25,7 +25,6 @@ export class TabsComponent {
             tab.selected = true;
         })
         tab.selected = true;
-        // this.selected.emit({selectedTab: tab});    
     }
 
     changeSelectedTab(index: number){
