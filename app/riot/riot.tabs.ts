@@ -7,24 +7,17 @@ import { Page } from "ui/page";
   templateUrl: './riot/riot.tabs.html',
 })
 export class TabsComponent {
-  
+
     tabs:Tab[] = [];
-    @Output() selected = new EventEmitter();
+    // @Output() selected = new EventEmitter();
 
 	constructor(private page: Page){}
-    
+
     addTab(tab: Tab) {
         if (!this.tabs.length) {
             tab.selected = true;
         }
         this.tabs.push(tab);
-    }
-    
-    selectTab(tab:Tab) {
-        this.tabs.map((tab) => {
-            tab.selected = true;
-        })
-        tab.selected = true;
     }
 
     changeSelectedTab(index: number){
