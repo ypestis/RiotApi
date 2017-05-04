@@ -1,6 +1,6 @@
 .riot-startpage-image-logo {
-    margin-top: 0%;
-    height: 100px;
+    margin-top:0%;
+    height: 110px;
     width: auto;
 }
 .riot-startpage-nick-input {
@@ -16,7 +16,7 @@
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60%;
+    margin-top: 45%;
 }
 .riot-startpage-button{
     width: 80%;

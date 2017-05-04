@@ -9,6 +9,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { RiotStartpage } from "./riot/riot.startpage"
 import { RiotResults } from "./riot/riot.results"
+import { RiotFriends } from "./riot/riot.friends"
 import { TabsComponent } from './riot/riot.tabs';
 import { TabComponent } from './riot/riot.tab';
 
@@ -28,11 +29,12 @@ import { TabComponent } from './riot/riot.tab';
         AppComponent,
         RiotStartpage,
         RiotResults,
-        TabComponent, 
+        RiotFriends,
+        TabComponent,
         TabsComponent,
     ],
     providers: [
-        TabComponent, 
+        TabComponent,
         TabsComponent,
     ],
     schemas: [

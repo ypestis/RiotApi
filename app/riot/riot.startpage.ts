@@ -15,6 +15,9 @@ export class RiotStartpage {
     find_user(){
         this.router.navigate(['/riot-results', this.nickname]);
     }
+    check_friends(){
+        this.router.navigate(['/riot-friends']);
+    }
 }
 
 // http://ckaminski.pl/riotapi/getPlayerStats.php?playerName=yPestis

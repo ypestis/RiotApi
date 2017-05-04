@@ -16,6 +16,7 @@ export class RiotResults implements OnInit {
     summoner: summonerModel;
     nickname = "";
     apiLink = "http://ckaminski.pl/riotapi/getPlayerStats.php?playerName=";
+    addFriend = "http://ckaminski.pl/riotapi/getFriend.php?addFriend=";
     playerList: Array<Object> = [];
 
     constructor( private route: ActivatedRoute, private router: Router, private http: Http ) {}
@@ -40,6 +41,17 @@ export class RiotResults implements OnInit {
 
     public onNavBtnTap(): void{
         this.router.navigate(['']);
+    }
+
+    public onTapNickName(){
+        var link = this.addFriend + this.playerList[0]["summonerName"];
+        this.http.get(link)
+                    .map(this.extractData)
+                    .subscribe(
+                        data => {
+                            console.dir(data);
+                        }
+                    );
     }
 }
 

@@ -1,0 +1,15 @@
+<!-- <StackLayout dock="top" orientation="vertical" style="height:90%;" backgroundColor="lightgray">
+        <label text="Code Methods" style="background-color:red;"></label>
+        <Label *ngFor="let player of playerList" [text]="player"></Label>
+        <label text="test" style="background-color:blue;"></label>
+</StackLayout> -->
+<ListView [items]="playerList" (itemTap)="onItemTap($event)">
+    <template let-item="item" let-i="index">
+    <StackLayout orientation="horizontal" style="height:50px;" backgroundColor="lightgray">
+    	<label text="Code Methods" [text]="item.name"></label>
+    	<Button text="Delete" (tap)="deleteFriend(i)" class='btn btn-primary'></Button>
+    	<Button text="Show" (tap)="showFriend(item.name)" class='btn btn-primary'></Button>
+	</StackLayout>
+    </template>
+</ListView>
+

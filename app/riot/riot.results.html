@@ -1,6 +1,7 @@
 <ActionBar class="action-bar">
 	<NavigationButton text="Search" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
 	<Label text="Summoner Preview" class="text_bold text_center" style="text-align: center"></Label>
+	<Button text="Add Friend" (tap)="onTapNickName()" style="margin-left:80px"></Button>
 </ActionBar>
 <StackLayout >
 	<tabs>
@@ -12,7 +13,7 @@
 
 						<StackLayout>
 							<StackLayout orientation="horizontal" class="stack_elements">
-								<Label [text]="item.summonerName" class="text_bold text_center" style="font-size: 20px;"></Label>
+								<Label [text]="item.summonerName" tap="onTapNickName" class="text_bold text_center" style="font-size: 20px;"></Label>
 							</StackLayout>
 							<Label [text]=""  class="style-seven-before"></Label>
 						</StackLayout>
