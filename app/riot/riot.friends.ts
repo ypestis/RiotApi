@@ -48,6 +48,7 @@ export class RiotFriends implements OnInit {
                     .subscribe(
                         data => {
                             this.playerList.splice(index, 1);
+                            alert("Usunięto znajomego!")
                         }
                     );
     }

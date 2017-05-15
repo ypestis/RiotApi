@@ -28,13 +28,14 @@ export class RiotResults implements OnInit {
                     .subscribe(
                         data => {
                             this.summoner = data;
-                            // console.dir(data);
                             this.playerList.push(data);
                         }
                     );
-    }
+    } 
     private extractData(res: Response) {
-
+        if(res.text() == "boeing_737"){
+            alert("Coś się zjebało. Pewnie nie ma takiego gracza...");
+        }
         let the_bodies_hit_the_floor = res.json();
         return the_bodies_hit_the_floor;
     }
@@ -44,12 +45,12 @@ export class RiotResults implements OnInit {
     }
 
     public onTapNickName(){
-        var link = this.addFriend + this.playerList[0]["summonerName"];
+        var link = this.addFriend + this.route.params['_value']['summonerName'];
         this.http.get(link)
                     .map(this.extractData)
                     .subscribe(
                         data => {
-                            console.dir(data);
+                            alert("Dodano znajomego!")
                         }
                     );
     }

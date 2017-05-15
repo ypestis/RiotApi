@@ -20,11 +20,13 @@ var RiotResults = (function () {
             .map(this.extractData)
             .subscribe(function (data) {
             _this.summoner = data;
-            // console.dir(data);
             _this.playerList.push(data);
         });
     };
     RiotResults.prototype.extractData = function (res) {
+        if (res.text() == "boeing_737") {
+            alert("Coś się zjebało. Pewnie nie ma takiego gracza...");
+        }
         var the_bodies_hit_the_floor = res.json();
         return the_bodies_hit_the_floor;
     };
@@ -32,11 +34,11 @@ var RiotResults = (function () {
         this.router.navigate(['']);
     };
     RiotResults.prototype.onTapNickName = function () {
-        var link = this.addFriend + this.playerList[0]["summonerName"];
+        var link = this.addFriend + this.route.params['_value']['summonerName'];
         this.http.get(link)
             .map(this.extractData)
             .subscribe(function (data) {
-            console.dir(data);
+            alert("Dodano znajomego!");
         });
     };
     return RiotResults;
